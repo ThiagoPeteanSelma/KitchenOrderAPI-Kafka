@@ -3,6 +3,11 @@ KitchenOrderAPI - Kafka Integration
 
 **Português** | [English](#english) | [Español](#espanol)
 
+------------------------------------------------------------
+<a id="portugues"></a>
+🇧🇷 Português
+------------------------------------------------------------
+
 Objetivo
 --------
 Criar uma API Restful em C# para gerenciamento de pedidos de cozinha utilizando Kafka como mensageria. 
@@ -10,6 +15,7 @@ A API deve receber pedidos, publicar mensagens no Kafka e permitir que a cozinha
 
 Estrutura do Projeto
 --------------------
+```
 KitchenOrderAPI-Kafka/
 │
 ├── src/
@@ -23,12 +29,10 @@ KitchenOrderAPI-Kafka/
 ├── README.md
 ├── LICENSE
 └── docker-compose.yml          -> Configuração para Kafka e API
+```
 
-------------------------------------------------------------
-<a id="portugues"></a>
-🇧🇷 Português
-------------------------------------------------------------
-API Restful em C# para gerenciamento de pedidos de cozinha utilizando Kafka como mensageria.
+🌐 Portfólio
+Acesse o portfólio do autor: https://thiagopeteanselma.github.io/Thiago-Selma-Portfolio/
 
 Funcionalidades
 - Receber pedidos via endpoint REST
@@ -54,11 +58,46 @@ Contribuição
 4. Push para a branch (git push origin feature/nova-feature)
 5. Abra um Pull Request
 
+Autor
+-----
+Thiago Petean Selma  
+Líder Técnico | Engenheiro de Software .NET  
+GitHub: https://github.com/thiagopeteanselma  
+LinkedIn: https://www.linkedin.com/in/thiagopeteanselma  
+Email: thiagopetean@gmail.com  
+
+Última atualização: 2026-08-24
+
 ------------------------------------------------------------
 <a id="english"></a>
 🇺🇸 English
 ------------------------------------------------------------
-Restful API in C# for kitchen order management using Kafka as messaging system.
+
+Objective
+---------
+Create a Restful API in C# for kitchen order management using Kafka as a messaging system.  
+The API should receive orders, publish messages to Kafka, and allow the kitchen to consume these messages to coordinate dish preparation.
+
+Project Structure
+-----------------
+```
+KitchenOrderAPI-Kafka/
+│
+├── src/
+│   ├── KitchenOrderAPI/        -> Main API project
+│   ├── KitchenOrderAPI.Tests/  -> Unit test project
+│
+├── docs/
+│   └── architecture.md          -> Architecture documentation
+│
+├── .gitignore
+├── README.md
+├── LICENSE
+└── docker-compose.yml          -> Kafka and API configuration
+```
+
+🌐 Portfolio
+Visit the author's portfolio: https://thiagopeteanselma.github.io/Thiago-Selma-Portfolio/
 
 Features
 - Receive orders via REST endpoint
@@ -84,11 +123,46 @@ Contribution
 4. Push to the branch (git push origin feature/new-feature)
 5. Open a Pull Request
 
+Author
+------
+Thiago Petean Selma  
+Technical Lead | .NET Software Engineer  
+GitHub: https://github.com/thiagopeteanselma  
+LinkedIn: https://www.linkedin.com/in/thiagopeteanselma  
+Email: thiagopetean@gmail.com  
+
+Last update: 2026-08-24
+
 ------------------------------------------------------------
 <a id="espanol"></a>
 🇪🇸 Español
 ------------------------------------------------------------
-API Restful en C# para la gestión de pedidos de cocina utilizando Kafka como sistema de mensajería.
+
+Objetivo
+--------
+Crear una API Restful en C# para la gestión de pedidos de cocina utilizando Kafka como sistema de mensajería.  
+La API debe recibir pedidos, publicar mensajes en Kafka y permitir que la cocina consuma estos mensajes para coordinar la preparación de los platos.
+
+Estructura del Proyecto
+-----------------------
+```
+KitchenOrderAPI-Kafka/
+│
+├── src/
+│   ├── KitchenOrderAPI/        -> Proyecto principal de la API
+│   ├── KitchenOrderAPI.Tests/  -> Proyecto de pruebas unitarias
+│
+├── docs/
+│   └── arquitectura.md          -> Documentación de la arquitectura
+│
+├── .gitignore
+├── README.md
+├── LICENSE
+└── docker-compose.yml          -> Configuración para Kafka y API
+```
+
+🌐 Portafolio
+Visita el portafolio del autor: https://thiagopeteanselma.github.io/Thiago-Selma-Portfolio/
 
 Funcionalidades
 - Recibir pedidos vía endpoint REST
@@ -114,17 +188,12 @@ Contribución
 4. Push a la rama (git push origin feature/nueva-funcionalidad)
 5. Abre un Pull Request
 
-------------------------------------------------------------
-Licença
-------------------------------------------------------------
-MIT License - Ver LICENSE para detalhes.
-
 Autor
-------------------------------------------------------------
-Thiago Petean Selma
-Líder Técnico | Engenheiro de Software .NET
-GitHub: https://github.com/thiagopeteanselma
-LinkedIn: https://www.linkedin.com/in/thiagopeteanselma
-Email: thiagopetean@gmail.com
+-----
+Thiago Petean Selma  
+Líder Técnico | Ingeniero de Software .NET  
+GitHub: https://github.com/thiagopeteanselma  
+LinkedIn: https://www.linkedin.com/in/thiagopeteanselma  
+Email: thiagopetean@gmail.com  
 
-Última atualização: 2026-08-24
+Última actualización: 2026-08-24
