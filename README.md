@@ -1,6 +1,8 @@
 KitchenOrderAPI - Kafka Integration
 ===================================
 
+**Português** | [English](#english) | [Español](#espanol)
+
 Objetivo
 --------
 Criar uma API Restful em C# para gerenciamento de pedidos de cozinha utilizando Kafka como mensageria. 
@@ -23,11 +25,12 @@ KitchenOrderAPI-Kafka/
 └── docker-compose.yml          -> Configuração para Kafka e API
 
 ------------------------------------------------------------
+<a id="portugues"></a>
 🇧🇷 Português
 ------------------------------------------------------------
 API Restful em C# para gerenciamento de pedidos de cozinha utilizando Kafka como mensageria.
 
-🚀 Funcionalidades
+Funcionalidades
 - Receber pedidos via endpoint REST
 - Publicar mensagens no Kafka
 - Consumir mensagens para a cozinha
@@ -35,16 +38,16 @@ API Restful em C# para gerenciamento de pedidos de cozinha utilizando Kafka como
 - Testes unitários com xUnit
 - Logs com Serilog
 
-📦 Instalação
+Instalação
 git clone https://github.com/<seu-usuario>/KitchenOrderAPI-Kafka.git
 cd KitchenOrderAPI-Kafka
 dotnet restore
 
-▶️ Execução
+Execução
 dotnet run
 Acesse: http://localhost:5000/swagger
 
-🤝 Contribuição
+Contribuição
 1. Faça um fork do projeto
 2. Crie uma branch (git checkout -b feature/nova-feature)
 3. Commit suas alterações (git commit -m 'Adiciona nova feature')
@@ -52,11 +55,12 @@ Acesse: http://localhost:5000/swagger
 5. Abra um Pull Request
 
 ------------------------------------------------------------
+<a id="english"></a>
 🇺🇸 English
 ------------------------------------------------------------
 Restful API in C# for kitchen order management using Kafka as messaging system.
 
-🚀 Features
+Features
 - Receive orders via REST endpoint
 - Publish messages to Kafka
 - Consume messages for kitchen processing
@@ -64,16 +68,16 @@ Restful API in C# for kitchen order management using Kafka as messaging system.
 - Unit tests with xUnit
 - Logging with Serilog
 
-📦 Installation
+Installation
 git clone https://github.com/<your-user>/KitchenOrderAPI-Kafka.git
 cd KitchenOrderAPI-Kafka
 dotnet restore
 
-▶️ Run
+Run
 dotnet run
 Access: http://localhost:5000/swagger
 
-🤝 Contribution
+Contribution
 1. Fork the project
 2. Create a branch (git checkout -b feature/new-feature)
 3. Commit your changes (git commit -m 'Add new feature')
@@ -81,11 +85,12 @@ Access: http://localhost:5000/swagger
 5. Open a Pull Request
 
 ------------------------------------------------------------
+<a id="espanol"></a>
 🇪🇸 Español
 ------------------------------------------------------------
 API Restful en C# para la gestión de pedidos de cocina utilizando Kafka como sistema de mensajería.
 
-🚀 Funcionalidades
+Funcionalidades
 - Recibir pedidos vía endpoint REST
 - Publicar mensajes en Kafka
 - Consumir mensajes para la cocina
@@ -93,18 +98,33 @@ API Restful en C# para la gestión de pedidos de cocina utilizando Kafka como si
 - Pruebas unitarias con xUnit
 - Logs con Serilog
 
-📦 Instalación
+Instalación
 git clone https://github.com/<tu-usuario>/KitchenOrderAPI-Kafka.git
 cd KitchenOrderAPI-Kafka
 dotnet restore
 
-▶️ Ejecución
+Ejecución
 dotnet run
 Acceder: http://localhost:5000/swagger
 
-🤝 Contribución
+Contribución
 1. Haz un fork del proyecto
 2. Crea una rama (git checkout -b feature/nueva-funcionalidad)
 3. Haz commit de tus cambios (git commit -m 'Agrega nueva funcionalidad')
 4. Push a la rama (git push origin feature/nueva-funcionalidad)
 5. Abre un Pull Request
+
+------------------------------------------------------------
+Licença
+------------------------------------------------------------
+MIT License - Ver LICENSE para detalhes.
+
+Autor
+------------------------------------------------------------
+Thiago Petean Selma
+Líder Técnico | Engenheiro de Software .NET
+GitHub: https://github.com/thiagopeteanselma
+LinkedIn: https://www.linkedin.com/in/thiagopeteanselma
+Email: thiagopetean@gmail.com
+
+Última atualização: 2026-08-24
