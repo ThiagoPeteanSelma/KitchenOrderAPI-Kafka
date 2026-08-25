@@ -19,16 +19,18 @@ Estrutura do Projeto
 KitchenOrderAPI-Kafka/
 │
 ├── src/
-│   ├── KitchenOrderAPI/        -> Projeto principal da API
+│   ├── KitchenOrderAPI/        -> Projeto principal da API (garçons lançam pedidos)
+│   ├── KitchenMessaging/       -> Biblioteca de integração com Kafka (Producer/Consumer)
+│   ├── KitchenConsumer/        -> Projeto da cozinha (consome pedidos e processa)
 │   ├── KitchenOrderAPI.Tests/  -> Projeto de testes unitários
 │
 ├── docs/
-│   └── arquitetura.md          -> Documentação da arquitetura
+│   └── architecture.md          -> Documentação da arquitetura
 │
 ├── .gitignore
 ├── README.md
 ├── LICENSE
-└── docker-compose.yml          -> Configuração para Kafka e API
+└── docker-compose.yml          -> Configuração para Kafka, API e Consumers
 ```
 
 🌐 Portfólio
@@ -43,7 +45,7 @@ Funcionalidades
 - Logs com Serilog
 
 Instalação
-git clone https://github.com/<seu-usuario>/KitchenOrderAPI-Kafka.git
+git clone https://github.com/ThiagoPeteanSelma/KitchenOrderAPI-Kafka.git
 cd KitchenOrderAPI-Kafka
 dotnet restore
 
@@ -85,6 +87,8 @@ KitchenOrderAPI-Kafka/
 │
 ├── src/
 │   ├── KitchenOrderAPI/        -> Main API project
+│   ├── KitchenMessaging/       -> Kafka integration library (Producer/Consumer)
+│   ├── KitchenConsumer/        -> Kitchen project (consumes and processes orders)
 │   ├── KitchenOrderAPI.Tests/  -> Unit test project
 │
 ├── docs/
@@ -108,7 +112,7 @@ Features
 - Logging with Serilog
 
 Installation
-git clone https://github.com/<your-user>/KitchenOrderAPI-Kafka.git
+git clone https://github.com/ThiagoPeteanSelma/KitchenOrderAPI-Kafka.git
 cd KitchenOrderAPI-Kafka
 dotnet restore
 
@@ -150,10 +154,12 @@ KitchenOrderAPI-Kafka/
 │
 ├── src/
 │   ├── KitchenOrderAPI/        -> Proyecto principal de la API
+│   ├── KitchenMessaging/       -> Biblioteca de integración con Kafka (Productor/Consumidor)
+│   ├── KitchenConsumer/        -> Proyecto de la cocina (consume pedidos y los procesa)
 │   ├── KitchenOrderAPI.Tests/  -> Proyecto de pruebas unitarias
 │
 ├── docs/
-│   └── arquitectura.md          -> Documentación de la arquitectura
+│   └── architecture.md          -> Documentación de la arquitectura
 │
 ├── .gitignore
 ├── README.md
@@ -173,7 +179,7 @@ Funcionalidades
 - Logs con Serilog
 
 Instalación
-git clone https://github.com/<tu-usuario>/KitchenOrderAPI-Kafka.git
+git clone https://github.com/ThiagoPeteanSelma/KitchenOrderAPI-Kafka.git
 cd KitchenOrderAPI-Kafka
 dotnet restore
 
