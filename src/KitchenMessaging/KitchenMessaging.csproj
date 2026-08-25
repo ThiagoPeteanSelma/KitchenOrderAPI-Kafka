@@ -1,17 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.12" />
+    <PackageReference Include="Confluent.Kafka" Version="2.15.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KitchenMessaging\KitchenMessaging.csproj" />
     <ProjectReference Include="..\KitchenShared\KitchenShared.csproj" />
   </ItemGroup>
 

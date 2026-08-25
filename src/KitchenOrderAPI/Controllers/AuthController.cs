@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using KitchenOrderAPI.Models;   // DTOs de login
+using KitchenShared.Models;   // DTOs de login
 using KitchenOrderAPI.Services; // Serviço de autenticação
 
 namespace KitchenOrderAPI.Controllers

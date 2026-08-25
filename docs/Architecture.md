@@ -17,10 +17,13 @@ Ela utiliza **Apache Kafka** como mensageria para comunicação assíncrona e es
 Fluxo principal:
 ```mermaid
 flowchart LR
-    A[Cliente] --> B[KitchenOrderAPI]
-    B --> C[Kafka - tópico orders]
-    C --> D[Kitchen Consumer]
-    D --> E[Preparação dos pratos]
+    A[Cliente / Garçom] --> B[KitchenOrderAPI]
+    B --> C[KitchenMessaging - Producer]
+    C --> D[Kafka - tópico orders]
+    D --> E[KitchenMessaging - Consumer]
+    E --> F[KitchenConsumer]
+    F --> G[Preparação dos pratos / Validação de estoque]
+    G --> H[Resposta ao Garçom]
 ```
 
 ### 3. Componentes
