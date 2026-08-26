@@ -1,4 +1,16 @@
+using KitchenShared.Models;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Load configuration from appsettings.Kitchen.json
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile(Path.Combine("..", "appsettings.Kitchen.json"), optional: false, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
+// Register typed configuration dependecy injection
+builder.Services.Configure<KafkaSettings>(builder.Configuration.GetSection("Kafka"));
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

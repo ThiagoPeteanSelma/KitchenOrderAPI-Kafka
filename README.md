@@ -49,6 +49,18 @@ git clone https://github.com/ThiagoPeteanSelma/KitchenOrderAPI-Kafka.git
 cd KitchenOrderAPI-Kafka
 dotnet restore
 
+Configuração
+
+Este projeto utiliza um arquivo `appsettings.Kitchen.json` compartilhado para definir as configurações comuns (Kafka, Banco de Dados, etc.).
+
+- O arquivo **não é versionado** por conter credenciais sensíveis.
+- Use o arquivo `appsettings.Kitchen.example.json` como modelo.
+- Copie o modelo e crie seu próprio arquivo:
+```bash
+cp appsettings.Kitchen.example.json appsettings.Kitchen.json
+```
+
+
 Execução
 dotnet run
 Acesse: http://localhost:5000/swagger

@@ -1,20 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
-using KitchenOrderAPI.Models;   // DTOs e entidades
+using KitchenShared.Models;   // DTOs e entidades
 using KitchenOrderAPI.Services; // Serviços de negócio
-using KitchenOrderAPI.Kafka;    // Producer
+using KitchenMessaging.Producer;    // Producer
+using KitchenShared.Enums; // Enums
 
 namespace KitchenOrderAPI.Controllers
 {
-
     [ApiController]
     [Route("api/[controller]")]
     public class OrdersController : ControllerBase
     {
+        private readonly OrderService _orderService;
+
+        public OrdersController(OrderService orderService)
+        {
+            _orderService = orderService;
+        }
         // POST /api/orders
         [HttpPost]
         public IActionResult CreateOrder([FromBody] OrderDto order)
         {
-            // TODO: Lógica para enviar pedido ao Kafka Producer
+            _orderService.Create(order);
             return Ok();
         }
 
@@ -22,31 +28,43 @@ namespace KitchenOrderAPI.Controllers
         [HttpGet("{id}")]
         public IActionResult GetOrderById(Guid id)
         {
-            // TODO: Lógica para buscar pedido
-            return Ok();
+            var order = _orderService.GetById(id);
+            if (order == null) return NotFound();
+            return Ok(order);
         }
 
         // GET /api/orders
         [HttpGet]
         public IActionResult GetAllOrders()
         {
-            // TODO: Lógica para listar pedidos
-            return Ok();
+            var orders = _orderService.GetAll();
+            return Ok(orders);
         }
 
         // PUT /api/orders/{id}/status
         [HttpPut("{id}/status")]
         public IActionResult UpdateOrderStatus(Guid id, [FromBody] string status)
         {
-            // TODO: Lógica para atualizar status
+            var success = _orderService.UpdateStatus(id, Enum.Parse<OrderStatus>(status, true));
+            if (!success) return NotFound();
+            return Ok();
+        }
+
+        // PUT /api/orders/{id}/cancel
+        [HttpPut("{id}/cancel")]
+        public IActionResult CancelOrder(Guid id)
+        {
+            var success = _orderService.Cancel(id);
+            if (!success) return NotFound();
             return Ok();
         }
 
         // DELETE /api/orders/{id}
         [HttpDelete("{id}")]
-        public IActionResult CancelOrder(Guid id)
+        public IActionResult RemoveOrder(Guid id)
         {
-            // TODO: Lógica para cancelar pedido
+            var success = _orderService.Remove(id);
+            if (!success) return NotFound();
             return Ok();
         }
     }
