@@ -3,6 +3,7 @@ using System.Text.Json;
 using KitchenMessaging.Interfaces;
 using KitchenShared.Enums;
 using KitchenShared.Constant;
+using Microsoft.Extensions.Logging;
 
 namespace KitchenMessaging.Consumer
 {
@@ -16,6 +17,8 @@ namespace KitchenMessaging.Consumer
         /// The configuration for the Kafka consumer, including bootstrap servers, group ID, and auto offset reset policy.
         /// </summary>
         private readonly ConsumerConfig _config;
+
+        private readonly ILogger<KafkaConsumer<T>> _logger;
         /// <summary>
         /// Initializes a new instance of the KafkaConsumer class with the specified bootstrap servers, group ID, username, and password.
         /// </summary>
@@ -23,9 +26,10 @@ namespace KitchenMessaging.Consumer
         /// <param name="groupId">The consumer group ID.</param>
         /// <param name="username">The SASL username for authentication.</param>
         /// <param name="password">The SASL password for authentication.</param>
-        public KafkaConsumer(string bootstrapServers, string groupId, string username, string password)
+        public KafkaConsumer(string bootstrapServers, string groupId, string username, string password, ILogger<KafkaConsumer<T>> logger)
         {
             _config = KafkaConfig.GetConsumerConfig(bootstrapServers, groupId, username, password);
+            _logger = logger;
         }
         /// <summary>
         /// Consumes messages of type T from the specified Kafka topic and invokes the provided message handler for each consumed message.
@@ -36,6 +40,7 @@ namespace KitchenMessaging.Consumer
         {
             using var consumer = new ConsumerBuilder<Null, string>(_config).Build();
             consumer.Subscribe(topic.ToString().ToLower());
+            _logger.LogInformation(LogMessages.ConsumerStarted, topic);
 
             while (true)
             {
@@ -48,7 +53,11 @@ namespace KitchenMessaging.Consumer
                 }
                 catch (JsonException ex)
                 {
-                    Console.WriteLine(string.Format(ErrorMessage.JsonDeserializationError, ex.Message));
+                    _logger.LogError(LogMessages.JsonDeserializationError, topic, ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(LogMessages.UnexpectedConsumerError, topic, ex.Message);
                 }
             }
         }
